@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 /**
  * struct binary_tree_s - Binary tree node
  *
@@ -31,5 +30,6 @@ typedef struct binary_tree_s heap_t;
 
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 void binary_tree_print(const binary_tree_t *tree);
+binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
 
 #endif
