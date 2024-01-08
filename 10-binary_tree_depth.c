@@ -3,20 +3,18 @@
 /**
  * binary_tree_depth - measures the depth of a node in a binary tree
  * @tree: tree
- * Return: none
+ * Return: depth of the node
  */
 
 size_t binary_tree_depth(const binary_tree_t *tree)
 {
-	
+	size_t depth = 0;
+
 	if (tree == NULL)
-		return;
+		return 0;
 
-	size_t rdepth = (1 + binary_tree_depth(tree->left));
-	size_t ldepth = (1 + binary_tree_depth(tree->right));
+	if (tree->parent != NULL)
+		depth = 1 + binary_tree_depth(tree->parent);
 
-	if (rdepth > ldepth)
-		return (rdepth);
-	else
-		return (ldepth);
+	return depth;
 }
