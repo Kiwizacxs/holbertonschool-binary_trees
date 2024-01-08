@@ -5,7 +5,6 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <bits/stdc++.h>
 #include <string.h>
 
 /**
