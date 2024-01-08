@@ -1,11 +1,11 @@
-#ifndef binary_trees_h
-#define binary_trees_h
-
+#ifndef BINARY_TREES_H
+#define BINARY_TREES_H
 
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stddef.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -41,5 +41,6 @@ void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
 size_t binary_tree_height(const binary_tree_t *tree);
 size_t binary_tree_depth(const binary_tree_t *tree);
 size_t binary_tree_size(const binary_tree_t *tree);
+size_t binary_tree_leaves(const binary_tree_t *tree);
 
 #endif
