@@ -1,22 +1,30 @@
 #include "binary_trees.h"
 
 int
-binary_tree_heigh(const binary_tree_t *tree)
+binary_tree_rheigh(const binary_tree_t *tree)
 {
 	int rheight = 0;
-	int lheight = 0;
 
 	if (tree == NULL)
 		return (0);
 
 	if (tree->right)
 		rheight = (1 + binary_tree_heigh(tree->right));
+
+		return (rheight);
+}
+
+int
+binary_tree_lheigh(const binary_tree_t *tree)
+{
+	int lheight = 0;
+
+	if (tree == NULL)
+		return (0);
+
 	if (tree->left)
 		lheight = (1 + binary_tree_heigh(tree->left));
 
-	if (rheight > lheight)
-		return (rheight);
-	else
 		return (lheight);
 }
 
@@ -31,8 +39,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
-	int left_height = binary_tree_heigh(tree->left);
-	int right_height = binary_tree_heigh(tree->right);
+	int left_height = binary_tree_rheigh(tree);
+	int right_height = binary_tree_lheigh(tree);
 
 	return ((int)(left_height - right_height));
 }
