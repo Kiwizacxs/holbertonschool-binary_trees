@@ -5,7 +5,6 @@ binary_tree_t
 {
 	if (node->parent == NULL || node == NULL)
 		return (NULL);
-	
 	if (node->parent->left != node && node->parent->left != NULL)
 		return (node->parent->left);
 	else if (node->parent->right != node && node->parent->right != NULL)
@@ -13,4 +12,3 @@ binary_tree_t
 	else
 		return (NULL);  
 }
-
